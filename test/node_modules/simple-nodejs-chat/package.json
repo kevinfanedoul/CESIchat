@@ -1,0 +1,96 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "simple-nodejs-chat",
+        "scope": null,
+        "escapedName": "simple-nodejs-chat",
+        "name": "simple-nodejs-chat",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/Theo/Documents/cesi/PROJETS/test"
+    ]
+  ],
+  "_from": "simple-nodejs-chat@latest",
+  "_id": "simple-nodejs-chat@2.1.5",
+  "_inCache": true,
+  "_location": "/simple-nodejs-chat",
+  "_nodeVersion": "5.5.0",
+  "_npmOperationalInternal": {
+    "host": "packages-9-west.internal.npmjs.com",
+    "tmp": "tmp/simple-nodejs-chat-2.1.5.tgz_1456484686467_0.9313855750951916"
+  },
+  "_npmUser": {
+    "name": "simhub",
+    "email": "lackmann.simon@gmail.com"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "simple-nodejs-chat",
+    "scope": null,
+    "escapedName": "simple-nodejs-chat",
+    "name": "simple-nodejs-chat",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/simple-nodejs-chat/-/simple-nodejs-chat-2.1.5.tgz",
+  "_shasum": "43fe89051fcd4142743debb400019a3b477cc035",
+  "_shrinkwrap": null,
+  "_spec": "simple-nodejs-chat",
+  "_where": "/Users/Theo/Documents/cesi/PROJETS/test",
+  "author": {
+    "name": "SimHub",
+    "email": "simhub.dev@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/SimHub/responsive_nodejs_chat/issues"
+  },
+  "dependencies": {},
+  "description": "nodejs chat app",
+  "devDependencies": {
+    "express": "~3.4.4",
+    "mongodb": "~2.0",
+    "socket.io": "^1.4.5"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "43fe89051fcd4142743debb400019a3b477cc035",
+    "tarball": "https://registry.npmjs.org/simple-nodejs-chat/-/simple-nodejs-chat-2.1.5.tgz"
+  },
+  "engines": {
+    "node": ">= 5.5.0",
+    "npm": ">= 3.3.12"
+  },
+  "homepage": "https://github.com/SimHub/responsive_nodejs_chat#readme",
+  "keywords": [
+    "chat",
+    "Node.js",
+    "application",
+    "npm"
+  ],
+  "main": "server.js",
+  "maintainers": [
+    {
+      "name": "simhub",
+      "email": "lackmann.simon@gmail.com"
+    }
+  ],
+  "name": "simple-nodejs-chat",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimHub/responsive_nodejs_chat.git"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "version": "2.1.5"
+}

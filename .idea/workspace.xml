@@ -2,25 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6deffef-5f99-4d24-9ea6-b8527fc82319" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/bson/HISTORY.md" afterPath="$PROJECT_DIR$/testchattuto/node_modules/bson/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/bson/README.md" afterPath="$PROJECT_DIR$/testchattuto/node_modules/bson/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/bson/lib/bson/objectid.js" afterPath="$PROJECT_DIR$/testchattuto/node_modules/bson/lib/bson/objectid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/bson/package.json" afterPath="$PROJECT_DIR$/testchattuto/node_modules/bson/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/HISTORY.md" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/lib/connection/connection.js" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/lib/connection/connection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/lib/connection/pool.js" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/lib/connection/pool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/lib/topologies/replset.js" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/lib/topologies/replset.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/lib/topologies/replset_state.js" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/lib/topologies/replset_state.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/lib/topologies/server.js" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/lib/topologies/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/package.json" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb-core/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/HISTORY.md" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/lib/aggregation_cursor.js" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/lib/aggregation_cursor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/lib/collection.js" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/lib/collection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/lib/command_cursor.js" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/lib/command_cursor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/lib/db.js" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/lib/db.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/package.json" afterPath="$PROJECT_DIR$/testchattuto/node_modules/mongodb/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/package.json" afterPath="$PROJECT_DIR$/testchattuto/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testchattuto/server.js" afterPath="$PROJECT_DIR$/testchattuto/server.js" />
     </list>
     <ignored path="CESIchat.iws" />
@@ -45,8 +26,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testchattuto/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="79" column="18" lean-forward="true" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+            <state relative-caret-position="45">
+              <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -549,12 +530,12 @@
       <option name="presentableId" value="Default" />
       <updated>1481546321697</updated>
       <workItem from="1481546322967" duration="394000" />
-      <workItem from="1484206860591" duration="1554000" />
+      <workItem from="1484206860591" duration="3152000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1948000" />
+    <option name="totallyTimeSpent" value="3546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -678,8 +659,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testchattuto/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="79" column="18" lean-forward="true" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+        <state relative-caret-position="45">
+          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
           <folding />
         </state>
       </provider>

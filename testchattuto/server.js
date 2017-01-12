@@ -38,7 +38,13 @@ app.use(passport.session());
 }))
 app.use(passport.initialize())
 app.use(passport.session())*/
+var LocalUserSchema = new mongoose.Schema({
+    username: String,
+    salt: String,
+    hash: String
+});
 
+var Users = mongoose.model('userauths', localUserSchema);
 
 
 passport.use(new LocalStrategy(function(username, password,done){

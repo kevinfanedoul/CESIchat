@@ -9,12 +9,20 @@ var $ = require('jQuery');
 
 
 var io = require('socket.io')(http);
+var passport = require("passport");
+var LocalStrategy = require('passport-local').Strategy;
 
 
 app.get('/', function(req, res){
   res.sendfile('index.html');
 });
 
+
+app.use(express.cookieParser());
+app.use(express.bodyParser());
+app.use(express.session({ secret: 'SECRET' }));
+app.use(passport.initialize());
+app.use(passport.session());
 /*app.use(session({
     store: new RedisStore({
         url: config.redisStore.url
@@ -28,7 +36,20 @@ app.use(passport.session())*/
 
 
 
+passport.use(new LocalStrategy(function(username, password,done){
+    Users.findOne({ username : username},function(err,user){
+        if(err) { return done(err); }
+        if(!user){
+            return done(null, false, { message: 'Incorrect username.' });
+        }
 
+        hash( password, user.salt, function (err, hash) {
+            if (err) { return done(err); }
+            if (hash == user.hash) return done(null, user);
+            done(null, false, { message: 'Incorrect password.' });
+        });
+    });
+}));
 
 
 
@@ -79,3 +100,24 @@ var port = process.env.PORT || 3000;
 http.listen(port, function(){
   console.log('listening on *:3000');
 });
+
+function authenticatedOrNot(req, res, next){
+    if(req.isAuthenticated()){
+        next();
+    }else{
+        res.redirect("/login");
+    }
+}
+
+function userExist(req, res, next) {
+    Users.count({
+        username: req.body.username
+    }, function (err, count) {
+        if (count === 0) {
+            next();
+        } else {
+            // req.session.error = "User Exist"
+            res.redirect("/singup");
+        }
+    });
+}

@@ -3,12 +3,75 @@ var http = require('http').Server(app);
 var $ = require('jQuery');
 //var MongoClient = require("mongodb").MongoClient;
 var mongoose = require('mongoose');
-//var passport = require('passport');
 
-//const session = require('express-session')
-//const RedisStore = require('connect-redis')(session)
+var db = mongoose.connection;
+
+db.on('error', console.error);
+db.once('open', function() {
+    // Create your schemas and models here.
+    var messageSchema = new mongoose.Schema({
+        message: String
+        , date: String
+    });
+
+    var Message = mongoose.model('Message', messageSchema);
+
+    /*var message1 = new Message({
+        message: 'Thor'
+        , date: 'PG-13'
+    });
+
+    message1.save(function(err, thor) { // save le message
+        if (err) return console.error(err);
+        console.dir(thor);
+    });*/
+
+    Message.find(function (err, messages) {
+        if (err) return console.error(err);
+
+        messages.forEach(function (obj, i) {
+            //console.log(obj.message + "  ---   " + obj.date);
+            io.on('connection', function(socket) {
+                io.emit('chat message', obj.message, obj.date);
+            });
 
 
+
+
+        });
+    });
+
+    io.on('connection', function(socket){
+        console.log('a user connected');
+        socket.on('disconnect', function(){
+            console.log('user disconnected');
+        });
+        socket.on('chat message', function(msg){
+            console.log('message: ' + msg);
+            io.emit('chat message', msg,getDateSendingMessage());
+
+
+            var objNew = new Message({ message: msg, date: getDateSendingMessage() });
+            objNew.save(function(err, objnew) { // save le message
+                if (err) return console.error(err);
+                console.dir(objnew);
+                console.log("Le document a bien été inséré");
+            });
+
+
+
+
+        });
+    });
+
+
+
+
+});
+
+
+
+mongoose.connect('mongodb://localhost/testChat');
 
 
 
@@ -45,6 +108,7 @@ var LocalUserSchema = new mongoose.Schema({
 });
 
 var Users = mongoose.model('userauths', localUserSchema);
+
 
 
 passport.use(new LocalStrategy(function(username, password,done){
@@ -98,7 +162,7 @@ function getDateSendingMessage() {
 
 
 
-
+/*
 MongoClient.connect("mongodb://localhost/testChat", function(error, db) {
     if (error) return funcCallback(error);
 
@@ -140,7 +204,7 @@ MongoClient.connect("mongodb://localhost/testChat", function(error, db) {
         });
     });
 });
-
+*/
 
 
 

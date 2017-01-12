@@ -1,6 +1,5 @@
 var app = require('express')();
 var http = require('http').Server(app);
-var $ = require('jQuery');
 //var passport = require('passport');
 
 //const session = require('express-session')
@@ -33,14 +32,14 @@ app.use(passport.session())*/
 
 
 //FOR JQUERY
-/*require("jsdom").env("", function(err, window) {
+require("jsdom").env("", function(err, window) {
     if (err) {
         console.error(err);
         return;
     }
 
     var $ = require("jquery")(window);
-});*/
+});
 
 
 

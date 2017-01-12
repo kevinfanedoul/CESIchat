@@ -1,10 +1,14 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var $ = require('jQuery');
+var MongoClient = require("mongodb").MongoClient;
 //var passport = require('passport');
 
 //const session = require('express-session')
 //const RedisStore = require('connect-redis')(session)
+
+
+
 
 
 
@@ -63,6 +67,7 @@ function getDateSendingMessage() {
     return today;
 }
 
+var message;
 
 io.on('connection', function(socket){
   console.log('a user connected');
@@ -72,8 +77,27 @@ io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     console.log('message: ' + msg);
     io.emit('chat message', msg,getDateSendingMessage());
+    message = msg;
   });
 });
+
+
+
+MongoClient.connect("mongodb://localhost/testChat", function(error, db) {
+    if (error) return funcCallback(error);
+
+    db.collection("messages").insert(objNew, null, function (error, results) {
+        if (error) throw error;
+
+        console.log("Le document a bien été inséré");
+    });
+
+    console.log("Connecté à la base de données 'tesChat'");
+});
+
+
+
+
 
 var port = process.env.PORT || 3000;
 http.listen(port, function(){

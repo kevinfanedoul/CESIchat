@@ -7,7 +7,7 @@
     "express": "latest",
     "jquery": "^3.1.1",
     "jsdom": "^9.8.3",
-    "mongodb": "^2.2.15",
+    "mongodb": "^2.2.20",
     "redis": "^2.6.3",
     "socket.io": "latest"
   },

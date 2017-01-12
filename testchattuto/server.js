@@ -1,10 +1,15 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var $ = require('jQuery');
+//var MongoClient = require("mongodb").MongoClient;
+var mongoose = require('mongoose');
 //var passport = require('passport');
 
 //const session = require('express-session')
 //const RedisStore = require('connect-redis')(session)
+
+
+
 
 
 
@@ -85,16 +90,54 @@ function getDateSendingMessage() {
 }
 
 
-io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
-  socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
-    io.emit('chat message', msg,getDateSendingMessage());
-  });
+
+
+
+MongoClient.connect("mongodb://localhost/testChat", function(error, db) {
+    if (error) return funcCallback(error);
+
+    io.on('connection', function(socket){
+        console.log('a user connected');
+        socket.on('disconnect', function(){
+            console.log('user disconnected');
+        });
+        socket.on('chat message', function(msg){
+            console.log('message: ' + msg);
+            io.emit('chat message', msg,getDateSendingMessage());
+            var objNew = { message: msg, date: getDateSendingMessage() };
+            db.collection("messages").insert(objNew, null, function (error, results) {
+                if (error) throw error;
+
+                console.log("Le document a bien été inséré");
+            });
+        });
+    });
+
+
+
+    console.log("Connecté à la base de données 'tesChat'");
 });
+
+
+
+
+MongoClient.connect("mongodb://localhost/testChat", function(error, db) {
+    if (error) throw error;
+    io.on('connection', function(socket) {
+        db.collection("messages").find().toArray(function (error, results) {
+            if (error) throw error;
+            console.log(results);
+            results.forEach(function (obj, i) {
+                io.emit('chat message', obj.message, obj.date);
+
+            });
+        });
+    });
+});
+
+
+
+
 
 var port = process.env.PORT || 3000;
 http.listen(port, function(){

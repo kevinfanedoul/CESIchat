@@ -6,8 +6,8 @@ html
     link(href='/css/bootstrap.min.css', rel='stylesheet', media='screen')
   body
   .container              
-    h1 Say something meaningful here.
-    p.lead Say something worthwhile here.
+    h1 CESI chat
+    p.lead Unnoficial chat for the CESI RIL 16
     a(href="/") Go home
     br
     br
@@ -17,10 +17,10 @@ html
       a(href="/register") Register
     if (user)
       if (user.admin == 0 )
-        mess = 'user';
+        rank = 'user';
       else
-        mess = 'admin';
-      p You are currently logged in as #{user.username} with and you are an #{mess}
+        rank = 'admin';
+      p You are currently logged in as #{user.username} with and you are an #{rank}
       a(href="/logout") Logout
 
   script(src='http://code.jquery.com/jquery.js')

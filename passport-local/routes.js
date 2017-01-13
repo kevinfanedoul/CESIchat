@@ -14,7 +14,7 @@ module.exports = function (app) {
   });
 
   app.post('/register', function(req, res) {
-      Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
+      Account.register(new Account({ username : req.body.username, admin : req.body.admin}), req.body.password, function(err, account) {
           if (err) {
             return res.render("register", {info: "Sorry. That username already exists. Try again."});
           }

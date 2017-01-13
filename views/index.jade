@@ -1,0 +1,30 @@
+!!! 5
+html
+  head
+    title= CESIchat
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='/css/bootstrap.min.css', rel='stylesheet', media='screen')
+  body
+  .container              
+    h1 CESI chat
+    p.lead Unnoficial chat for the CESI RIL 16
+    a(href="/") Go home
+    br
+    br
+    if (!user)
+      a(href="/login") Login
+      br
+      a(href="/register") Register
+    if (user)
+      a(href="/chat") Chatroom
+      p
+      if (user.admin == 0 )
+        rank = 'user';
+      else
+        rank = 'admin';
+        a(href="/listing") Liste des gens
+      p You are currently logged in as #{user.username} with and you are an #{rank}
+      a(href="/logout") Logout
+
+  script(src='http://code.jquery.com/jquery.js')
+  script(src='js/bootstrap.min.js')

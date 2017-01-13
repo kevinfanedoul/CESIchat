@@ -1,6 +1,5 @@
 var app = require('express')();
 var http = require('http').Server(app);
-var $ = require('jQuery');
 //var MongoClient = require("mongodb").MongoClient;
 var mongoose = require('mongoose');
 

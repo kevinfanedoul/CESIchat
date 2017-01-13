@@ -21,8 +21,5 @@ html
                 socket.emit('connection');
                 socket.on('list', function(username,admin){
                 $('#list').append($('<li>').text(username));
-                $('#list li:last-of-type').append($('<span class="dateMessage">').text(admin));
+                $('#list li:last-of-type').append($('<span class="dateMessage">').text("  --  admin: " + admin));
                 });
-
-
-}

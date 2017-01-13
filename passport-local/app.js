@@ -118,7 +118,7 @@ db.once('open', function() {
 
     var adminList = mongoose.model('Account');
 
-    io.on('', function(socket) {
+    io.on('connection', function(socket) {
 
 
         console.log("listing account");

@@ -2,4 +2,9 @@
 
 
 
-https://www.npmjs.com/package/simple-nodejs-chat
+*	Lancer mongod
+*	Aller dans CESIchat
+*	Ouvrir le terminal
+* Lancer npm install && npm start
+*	Ouvrir http://localhost:3000/
+

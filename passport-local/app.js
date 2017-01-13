@@ -84,6 +84,7 @@ db.once('open', function() {
     var messageSchema = new mongoose.Schema({
         message: String
         , date: String
+        , username: String
     });
 
     var Message = mongoose.model('Message', messageSchema);
@@ -98,7 +99,7 @@ db.once('open', function() {
             messages.forEach(function (obj, i) {
                 //console.log(obj.message + "  ---   " + obj.date);
                 console.log(messages.length);
-                if (messages.length > 30) {
+                if (messages.length > 22) {
                     obj.remove();
                     messages.length --;
                     //db.messages.find({message: obj.message}).remove();
@@ -107,7 +108,7 @@ db.once('open', function() {
 
                 }
 
-                io.emit('chat message', obj.message, obj.date);
+                io.emit('chat message', obj.message, obj.date, obj.username);
 
 
             });
@@ -142,12 +143,12 @@ db.once('open', function() {
         socket.on('disconnect', function(){
             console.log('user disconnected');
         });
-        socket.on('chat message', function(msg){
-            console.log('message: ' + msg);
-            io.emit('chat message', msg,getDateSendingMessage());
+        socket.on('chat message', function(msg,username){
+            console.log('message: ' + msg + " username :  " + username);
+            io.emit('chat message', msg,getDateSendingMessage(),username);
 
 
-            var objNew = new Message({ message: msg, date: getDateSendingMessage() });
+            var objNew = new Message({ message: msg, date: getDateSendingMessage(), username : username });
             objNew.save(function(err, objnew) { // save le message
                 if (err) return console.error(err);
                 //console.dir(objnew);

@@ -38,8 +38,8 @@ module.exports = function (app) {
   });
 
     app.get('/chat', function (req, res) {
-        //res.render('chat', { user : req.user });
-        res.sendfile('views/chat.html');
+        res.render('chat', { user : req.user });
+        //res.sendfile('views/chat.html');
     });
 
   app.get('/logout', function(req, res) {

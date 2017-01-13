@@ -9,7 +9,7 @@ html
   body
   .container
     h1 Register Page
-    p.lead Say something worthwhile here. 
+    p.lead CESI chat
     br
     form(role='form', action="/register",method="post", style='max-width: 300px;')
       .form-group
@@ -17,7 +17,11 @@ html
       .form-group
         input.form-control(type='password', name="password", placeholder='Password')
       .form-group
-        input.form-control(type='text', name="admin", placeholder='Admin true or False')
+          | Admin ou pas ?
+          input(type='radio', name='admin', value='1')
+          |  oui
+          input(type='radio', name='admin', value='0')
+          |  non
       button.btn.btn-default(type='submit') Submit
       &nbsp;
       a(href='/')

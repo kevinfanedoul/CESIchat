@@ -18,7 +18,11 @@ html
       br
       a(href="/register") Register
     if (user)
-      p You are currently logged in as #{user.username}
+      if (user.admin == 0 )
+        mess = 'user';
+      else
+        mess = 'admin';
+      p You are currently logged in as #{user.username} with and you are an #{mess}
       a(href="/logout") Logout
 
   script(src='http://code.jquery.com/jquery.js')

@@ -5,23 +5,12 @@
   "main": "example.js",
   "dependencies": {
     "express": "latest",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "jquery": "latest",
     "jsdom": "latest",
     "mongodb": "latest",
     "passport-local": "latest",
     "mongoose": "latest",
     "redis": "latest",
-=======
-=======
->>>>>>> 074f64307f9ecfb0ecfb421e53ca02d8d660778e
-    "jsdom": "^9.8.3",
-    "mongodb": "^2.2.20",
-    "mongoose": "^4.7.6",
-    "passport-local": "^1.0.0",
-    "redis": "^2.6.3",
->>>>>>> 074f64307f9ecfb0ecfb421e53ca02d8d660778e
     "socket.io": "latest"
   },
   "scripts": {

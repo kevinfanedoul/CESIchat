@@ -20,7 +20,11 @@ html
         mess = 'user';
       else
         mess = 'admin';
+        a(href="/listing") List Users
+
       p You are currently logged in as #{user.username} with and you are an #{mess}
+
+
       a(href="/logout") Logout
 
   script(src='http://code.jquery.com/jquery.js')

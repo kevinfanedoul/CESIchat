@@ -1,0 +1,28 @@
+//
+   Created by adela_000 on 13/01/2017.
+
+!!! 5
+
+html
+    head
+        title= title
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(href='/css/bootstrap.min.css', rel='stylesheet', media='screen')
+        script(src='http://code.jquery.com/jquery.js')
+        script(src='js/bootstrap.min.js')
+    body
+        .container
+            h1 Liste des utilisateurs
+            ul#list
+            script(src='/socket.io/socket.io.js')
+
+            script.
+                var socket = io();
+                socket.emit('connection');
+                socket.on('list', function(username,admin){
+                $('#list').append($('<li>').text(username));
+                $('#list li:last-of-type').append($('<span class="dateMessage">').text(admin));
+                });
+
+
+}

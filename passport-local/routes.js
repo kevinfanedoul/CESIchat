@@ -13,6 +13,10 @@ module.exports = function (app) {
       res.render('register', { });
   });
 
+  app.get('/listing', function(req, res) {
+      res.render('list', { });
+  });
+
   app.post('/register', function(req, res) {
       Account.register(new Account({ username : req.body.username, admin : req.body.admin}), req.body.password, function(err, account) {
           if (err) {

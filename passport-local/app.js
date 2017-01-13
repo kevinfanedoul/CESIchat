@@ -114,6 +114,29 @@ db.once('open', function() {
         });
     });
 
+
+    var adminList = mongoose.model('Account');
+
+    io.on('', function(socket) {
+
+
+        console.log("listing account");
+        adminList.find(function (err, users) {
+            if (err) return console.error(err);
+
+            users.forEach(function (obj, i) {
+                //console.log(obj.message + "  ---   " + obj.date);
+                console.log(users.length);
+
+                io.emit('list', obj.username, obj.admin);
+
+
+            });
+        });
+    });
+
+
+
     io.on('connection', function(socket){
         console.log('a user connected');
         socket.on('disconnect', function(){

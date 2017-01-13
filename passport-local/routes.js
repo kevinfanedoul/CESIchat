@@ -1,5 +1,7 @@
 var passport = require('passport');
 var Account = require('./models/account');
+var http = require('http');
+
 
 module.exports = function (app) {
     
@@ -18,7 +20,7 @@ module.exports = function (app) {
           }
 
           passport.authenticate('local')(req, res, function () {
-            res.redirect('/');
+            res.redirect('/chat');
           });
       });
   });
@@ -28,16 +30,24 @@ module.exports = function (app) {
   });
 
   app.post('/login', passport.authenticate('local'), function(req, res) {
-      res.redirect('/');
+      res.redirect('/chat');
   });
+
+    app.get('/chat', function (req, res) {
+        //res.render('chat', { user : req.user });
+        res.sendfile('views/chat.html');
+    });
 
   app.get('/logout', function(req, res) {
       req.logout();
       res.redirect('/');
   });
 
+
+    /*
   app.get('/ping', function(req, res){
       res.send("pong!", 200);
   });
+  */
   
 };

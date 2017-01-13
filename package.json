@@ -52,7 +52,17 @@
   "bugs": {
     "url": "https://github.com/SimHub/responsive_nodejs_chat/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.15.2",
+    "express": "^3.4.8",
+    "express-generator": "^4.14.0",
+    "jsonwebtoken": "^7.2.1",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1",
+    "passport-local": "^1.0.0"
+  },
   "description": "nodejs chat app",
   "devDependencies": {
     "express": "~3.4.4",
